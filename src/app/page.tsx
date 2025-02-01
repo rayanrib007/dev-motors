@@ -1,15 +1,10 @@
 "use server";
-import CHomeSubMenu from "@/components/home/subMenu/CHomeSubMenu";
 import { getDataHome } from "@/api/AHome";
 import { IHomeDataProtocols } from "@/interfaces/IHome";
+import CTNHomePage from "@/container/home/CTNHomePage/CTNHomePage";
 
 export default async function PHome() {
   const response = await getDataHome();
   const homeData: IHomeDataProtocols = response.data;
-  console.log(homeData);
-  return (
-    <main>
-      <CHomeSubMenu />
-    </main>
-  );
+  return <CTNHomePage homeData={homeData} />;
 }

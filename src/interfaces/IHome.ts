@@ -1,30 +1,32 @@
 export interface IHomeDataProtocols {
-  slug: string;
-  title: string;
-  type: string;
-  metadata: {
-    banner: {
-      url: string;
-      imgix_url: string;
-    };
-    heading: string;
-    cta_button: {
-      title: string;
-      url: string;
-    };
-    about: {
-      description: string;
+  object: {
+    slug: string;
+    title: string;
+    type: string;
+    metadata: {
       banner: {
         url: string;
         imgix_url: string;
       };
-    };
-    services: IServicesHomeDataProtocols[];
-    contact: {
-      email: string;
-      phone: string;
-      address: string;
-      time: string;
+      heading: string;
+      cta_button: {
+        title: string;
+        url: string;
+      };
+      about: {
+        description: string;
+        banner: {
+          url: string;
+          imgix_url: string;
+        };
+      };
+      services: IServicesHomeDataProtocols[];
+      contact: {
+        email: string;
+        phone: string;
+        address: string;
+        time: string;
+      };
     };
   };
 }
