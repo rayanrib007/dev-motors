@@ -1,4 +1,4 @@
-export interface IHomeDataProtocols {
+export interface IHomeDataProtocol {
   object: {
     slug: string;
     title: string;

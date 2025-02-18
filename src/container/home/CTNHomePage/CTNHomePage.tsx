@@ -1,14 +1,15 @@
 import CHero from "@/components/general/hero/CHero";
+import CHomeFooter from "@/components/home/footer/CHomeFooter";
 import CHomeServices from "@/components/home/services/CHomeServices";
 import CHomeSubMenu from "@/components/home/subMenu/CHomeSubMenu";
 import CTNCenterElementOnPage from "@/container/general/CTNCenterElementOnPage";
-import { IHomeDataProtocols } from "@/interfaces/IHome";
+import { IHomeDataProtocol } from "@/interfaces/IHome";
 import { Phone } from "lucide-react";
 
 export default function CTNHomePage({
   homeData,
 }: {
-  homeData: IHomeDataProtocols;
+  homeData: IHomeDataProtocol;
 }) {
   return (
     <main>
@@ -22,6 +23,7 @@ export default function CTNHomePage({
       />
       <CTNCenterElementOnPage>
         <CHomeServices homeData={homeData} />
+        <CHomeFooter homeData={homeData} />
       </CTNCenterElementOnPage>
     </main>
   );

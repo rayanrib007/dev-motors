@@ -1,15 +1,15 @@
-import { IHomeDataProtocols } from "@/interfaces/IHome";
+import { IHomeDataProtocol } from "@/interfaces/IHome";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 
 export default function CHomeServices({
   homeData,
 }: {
-  homeData: IHomeDataProtocols;
+  homeData: IHomeDataProtocol;
 }) {
   return (
     <>
-      <section className={styles.containerAbout}>
+      <section className={styles.containerAbout} id="services">
         <article className={styles.innerAbout}>
           <h1 className={styles.title}>Sobre</h1>
           <p>{homeData.object.metadata.about.description}</p>

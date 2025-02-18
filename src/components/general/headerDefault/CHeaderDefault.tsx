@@ -26,8 +26,8 @@ export default function CHeaderDefault() {
           </div>
           <nav className={styles.nav}>
             <Link href="/">HOME</Link>
-            <Link href="/#servicos">SERVIÇOS</Link>
-            <Link href="/#contatos">CONTATOS</Link>
+            <Link href="/#services">SERVIÇOS</Link>
+            <Link href="/#contacts">CONTATOS</Link>
           </nav>
         </div>
       </div>
