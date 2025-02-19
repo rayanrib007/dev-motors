@@ -8,7 +8,7 @@ export default function CHomeFooter({
   homeData: IHomeDataProtocol;
 }) {
   return (
-    <footer id="#contacts" className={styles.footer}>
+    <footer id="contacts" className={styles.footer}>
       <section className={styles.section}>
         <h2 className={styles.title}>Contatos</h2>
         <div className={styles.content}>
@@ -45,6 +45,14 @@ export default function CHomeFooter({
           </div>
         </div>
       </section>
+      <a href={homeData.object.metadata.cta_button.url} className={styles.link}>
+        <Phone size={24} color="#fff" />
+        {homeData.object.metadata.cta_button.title}
+      </a>
+      <p className={styles.copyText}>
+        Todos direitos reservados {homeData.object.title} @
+        {new Date().getFullYear()}
+      </p>
     </footer>
   );
 }
