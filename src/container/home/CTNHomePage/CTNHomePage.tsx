@@ -3,17 +3,24 @@ import CHomeFooter from "@/components/home/footer/CHomeFooter";
 import CHomeServices from "@/components/home/services/CHomeServices";
 import CHomeSubMenu from "@/components/home/subMenu/CHomeSubMenu";
 import CTNCenterElementOnPage from "@/container/general/CTNCenterElementOnPage";
-import { IHomeDataProtocol } from "@/interfaces/IHome";
+import {
+  IHomeDataProtocol,
+  ISubMenuInfosPagesProtocol,
+} from "@/interfaces/IHome";
 import { Phone } from "lucide-react";
 
 export default function CTNHomePage({
   homeData,
+  subMenuInfosPages,
 }: {
   homeData: IHomeDataProtocol;
+  subMenuInfosPages: ISubMenuInfosPagesProtocol;
 }) {
   return (
     <main>
-      <CHomeSubMenu />
+      {subMenuInfosPages.objects.length > 0 && (
+        <CHomeSubMenu subMenuInfosPages={subMenuInfosPages} />
+      )}
       <CHero
         heading={homeData.object.metadata.heading}
         bannerUrl={homeData.object.metadata.banner.url}

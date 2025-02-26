@@ -38,3 +38,10 @@ export interface IServicesHomeDataProtocols {
   };
   description: string;
 }
+
+export interface ISubMenuInfosPagesProtocol {
+  objects: {
+    slug: string;
+    title: string;
+  }[];
+}

@@ -1,8 +1,17 @@
 "use server";
-import { getDataHome } from "@/api/AHome";
+import { getDataHome, getSubMenuInfosPages } from "@/api/AHome";
+
 import CTNHomePage from "@/container/home/CTNHomePage/CTNHomePage";
 
 export default async function PHome() {
-  const response = await getDataHome();
-  return <CTNHomePage homeData={response.data} />;
+  const [dataHome, subMenuInfosPages] = await Promise.all([
+    getDataHome(),
+    getSubMenuInfosPages(),
+  ]);
+  return (
+    <CTNHomePage
+      homeData={dataHome.data}
+      subMenuInfosPages={subMenuInfosPages.data}
+    />
+  );
 }

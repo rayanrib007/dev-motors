@@ -3,9 +3,16 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import { X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ISubMenuInfosPagesProtocol } from "@/interfaces/IHome";
 
-export default function CHomeSubMenu() {
+export default function CHomeSubMenu({
+  subMenuInfosPages,
+}: {
+  subMenuInfosPages: ISubMenuInfosPagesProtocol;
+}) {
   const [isOpen, setIsOpen] = useState(false);
+
+  console.log(subMenuInfosPages);
 
   useEffect(() => {
     function handleRessize() {
