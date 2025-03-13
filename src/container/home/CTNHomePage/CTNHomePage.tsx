@@ -6,7 +6,7 @@ import CTNCenterElementOnPage from "@/container/general/CTNCenterElementOnPage";
 import {
   IHomeDataProtocol,
   ISubMenuInfosPagesProtocol,
-} from "@/interfaces/IHome";
+} from "@/interfaces/IPages";
 import { Phone } from "lucide-react";
 
 export default function CTNHomePage({

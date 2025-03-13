@@ -1,5 +1,5 @@
 "use server";
-import { getDataHome, getSubMenuInfosPages } from "@/api/AHome";
+import { getDataHome, getSubMenuInfosPages } from "@/api/APages";
 
 import CTNHomePage from "@/container/home/CTNHomePage/CTNHomePage";
 

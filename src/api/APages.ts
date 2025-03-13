@@ -38,3 +38,30 @@ export async function getSubMenuInfosPages() {
     };
   }
 }
+
+export async function getDataPage(itemSlug: string) {
+  const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}/objects`;
+  const queryParams = new URLSearchParams({
+    query: JSON.stringify({
+      slug: itemSlug,
+    }),
+    props: "slug,title,metadata",
+    read_key: process.env.READ_KEY as string,
+  });
+  const url = `${baseUrl}?${queryParams.toString()}`;
+  try {
+    const data = await fetch(url, { next: { revalidate: 120 } }).then((res) =>
+      res.json()
+    );
+    return {
+      type: "success",
+      data,
+    };
+  } catch (error) {
+    return {
+      message: "Error",
+      type: "fail",
+      data: null,
+    };
+  }
+}

@@ -1,4 +1,4 @@
-import { IHomeDataProtocol } from "@/interfaces/IHome";
+import { IHomeDataProtocol } from "@/interfaces/IPages";
 import styles from "./styles.module.scss";
 import { Clock, Mail, Map, Phone } from "lucide-react";
 

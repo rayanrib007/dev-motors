@@ -45,3 +45,29 @@ export interface ISubMenuInfosPagesProtocol {
     title: string;
   }[];
 }
+
+export interface IPagesDataProtocol {
+  metadata: {
+    banner: {
+      url: string;
+      imgix_url: string;
+    };
+    button: {
+      title: string;
+      url: string;
+    };
+    description: {
+      banner: {
+        url: string;
+        imgix_url: string;
+      };
+      button_active: boolean;
+      button_title: string;
+      button_url: string;
+      text: string;
+      title: string;
+    };
+  };
+  slug: string;
+  title: string;
+}

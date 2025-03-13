@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import { X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ISubMenuInfosPagesProtocol } from "@/interfaces/IHome";
+import { ISubMenuInfosPagesProtocol } from "@/interfaces/IPages";
 
 export default function CHomeSubMenu({
   subMenuInfosPages,
@@ -11,8 +11,6 @@ export default function CHomeSubMenu({
   subMenuInfosPages: ISubMenuInfosPagesProtocol;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(subMenuInfosPages);
 
   useEffect(() => {
     function handleRessize() {
@@ -40,12 +38,11 @@ export default function CHomeSubMenu({
             <X size={34} color="#121212" onClick={toggleMenu} />
           </button>
         )}
-        <li>
-          <Link href="/post/pagina-1">Página 1</Link>
-        </li>
-        <li>
-          <Link href="/post/pagina-2">Página 2</Link>
-        </li>
+        {subMenuInfosPages.objects.map((infosPage) => (
+          <li key={infosPage.slug}>
+            <Link href={`/post/${infosPage.slug}`}>{infosPage.title}</Link>
+          </li>
+        ))}
       </ul>
     </section>
   );
