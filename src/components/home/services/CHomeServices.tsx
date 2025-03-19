@@ -20,7 +20,9 @@ export default function CHomeServices({
             alt="Imagem ilustrativa sobre a empresa"
             quality={100}
             fill={true}
+            priority={true}
             src={homeData.object.metadata.about.banner.url}
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
           />
         </div>
       </section>
@@ -36,7 +38,9 @@ export default function CHomeServices({
                 alt="Imagem do serviço"
                 quality={100}
                 fill={true}
+                priority={true}
                 src={service.image.url}
+                sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
               />
             </div>
             <p>{service.description}</p>

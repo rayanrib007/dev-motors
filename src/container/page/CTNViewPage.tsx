@@ -40,7 +40,9 @@ export default function CTNViewPage({
               alt={dataPage.title}
               quality={100}
               fill={true}
+              priority={true}
               src={dataPage.metadata.description.banner.url}
+              sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
             />
           </div>
         </section>
