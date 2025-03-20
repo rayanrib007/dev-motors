@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 export async function getDataHome() {
   try {
@@ -53,13 +54,18 @@ export async function getDataPage(itemSlug: string) {
     const data = await fetch(url, { next: { revalidate: 120 } }).then((res) =>
       res.json()
     );
+    if (data.status && data.status === 404) {
+      throw new Error("Página não encontrada");
+    } else if (data.status && data.status !== 200) {
+      throw new Error("Falha interna do servidor");
+    }
     return {
       type: "success",
       data,
     };
-  } catch (error) {
+  } catch (error: any) {
     return {
-      message: "Error",
+      message: error.message,
       type: "fail",
       data: null,
     };

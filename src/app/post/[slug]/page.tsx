@@ -1,9 +1,11 @@
-// import styles from "./styles.module.scss";
-
 import { getDataPage } from "@/api/APages";
 import CTNViewPage from "@/container/page/CTNViewPage";
 
-export default async function PPost({ params }: { params: { slug: string } }) {
+export default async function PPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const dataPage = await getDataPage(slug);
 
